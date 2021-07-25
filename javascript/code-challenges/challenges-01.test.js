@@ -12,6 +12,7 @@ const addOne = (arr) => {
   // Solution code here...
   let newArr = [];
   arr.forEach(element => {
+    // adding one for each element in the array
     newArr.push(element+1);
   });
   return newArr;
@@ -128,7 +129,9 @@ This function should use forEach to populate your grocery list based on the stor
 
 const createList = (availableItems) => {
   // Solution code here...
+
   let listOfItems = [];
+
   availableItems.forEach(element => {
     if(element.available === true){
       listOfItems.push(element.name);
