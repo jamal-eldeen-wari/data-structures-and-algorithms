@@ -50,8 +50,7 @@ Write a function named addPurchases that, given an array of objects as input, us
 const addPurchases = (arr) => {
   // Solution code here...
   const purchasedItem = arr.reduce((acc, item) =>{
-    acc[item.purchasePrice]+= item.purchasePrice;
-    return acc;
+    return acc+item.purchasePrice;
   },0);
   return purchasedItem;
 };
@@ -66,11 +65,11 @@ Note: You may not use the array's built-in length property.
 
 const countNumberOfElements = (arr) => {
   // Solution code here...
-  let counter = 0;
-  for(let i = 0; i<arr.length;i++){
-    counter = counter+i;
-  }
-  return counter;
+  const count = arr.reduce(acc =>{
+    return acc+1;
+  },0);
+  return count;
+
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -131,6 +130,11 @@ let starWarsData = [{
 
 const returnNames = (arr) => {
   // Solution code here...
+  let namesData = arr.reduce((acc,cur)=>{
+    acc.push(cur.name);
+    return acc;
+  },[]);
+  return namesData;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -143,6 +147,7 @@ Note: You must use reduce for this challenge. You may not use the built-in .reve
 
 const reversedString = (str) => {
   // Solution code here...
+  return str.split('').reduce((rev, character) => character + rev, '');
 };
 
 /* ------------------------------------------------------------------------------------------------
