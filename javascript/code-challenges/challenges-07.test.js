@@ -137,8 +137,8 @@ const listFoods = (recipe) => {
   let result = [];
   for (let x = 0; x < recipe.ingredients.length; x++) {
 
-    var spaceCount = (recipe.ingredients[x].split(' ').length - 1);
-    if (spaceCount === 2) {
+    var count = (recipe.ingredients[x].split(' ').length - 1);
+    if (count === 2) {
       result.push(recipe.ingredients[x].slice(recipe.ingredients[x].lastIndexOf(' ') + 1));
     }
 
