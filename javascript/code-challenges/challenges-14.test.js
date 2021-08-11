@@ -163,7 +163,7 @@ Write a function named detectTicTacToeWin that accepts a two-dimensional array o
 
 This function should return either true or false to indicate if someone won the game.
 
-Instead of trying to write crazy for loops to automate checking the rows, columns and diagonals consider writing one helper function that accepts three coordinate pairs and checks the values of the array at those locations. For instance helpCheck(row1, col1, row2, col2, row3, col3).
+Instead of trying to write crazy for loops to automate checking the rows, columns and diagonals consider writing one helper function that accepts three coordinate pairs and checks the values of the array at those locations. For instance helpCheck(r1, col1, r2, col2, r3, col3).
 
 Your function does not need to work for boards of any size other than 3x3.
 
@@ -177,24 +177,38 @@ Here is a sample board:
 
 const detectTicTacToeWin = (board) => {
   // Solution code here...
-  let winning = false;
-
-  //rows and columns
-  for (let i = 0; i < 3; i++) {
-    if ((board[i][0] === board[i][1] === board[i][2]) ||
-        (board[0][i] === board[1][i] === board[2][i])) {
-      winning = true;
+  function checking(r1, r2, r3) {
+    // horizontal check
+    if (r1[0] === r1[1] && r1[1] === r1[2] && r1[2] !== '') {
+      return true;
     }
+    if (r2[0] === r2[1] && r2[1] === r2[2] && r2[2] !== '') {
+      return true;
+    }
+    if (r3[0] === r3[1] && r3[1] === r3[2] && r3[2] !== '') {
+      return true;
+    }
+    // vertical check
+    if (r1[0] === r2[0] && r2[0] === r3[0] && r3[0] !== '') {
+      return true;
+    }
+    if (r1[1] === r2[1] && r2[1] === r3[1] && r3[1] !== '') {
+      return true;
+    }
+    if (r1[2] === r2[2] && r2[2] === r3[2] && r3[2] !== '') {
+      return true;
+    }
+    // diagonal check
+    if (r1[0] === r2[1] && r2[1] === r3[2] && r3[2] !== '') {
+      return true;
+    }
+    if (r1[2] === r2[1] && r2[1] === r3[0] && r3[0] !== '') {
+      return true;
+    }
+    return false;
   }
+  return checking(board[0], board[1], board[2]);
 
-  //diagonals
-  if ((board[0][0] === board[1][1] === board[2][2]) ||
-      (board[0][2] === board[1][1] === board[2][0])) {
-    winning = true;
-  }
-  // console.table(board);
-  // console.log(winning);
-  return winning;
 };
 
 /* ------------------------------------------------------------------------------------------------
