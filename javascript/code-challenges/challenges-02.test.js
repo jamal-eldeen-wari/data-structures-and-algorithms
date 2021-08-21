@@ -10,11 +10,16 @@ Write a function named raisedToTheThird that takes in an array of numbers and re
 
 const raisedToTheThird = (arr) => {
   // Solution code here...
-  let newArrToPow3 = [];
-  arr.forEach(element =>{
-    newArrToPow3.push(Math.pow(element,3));
+  // let newArrToPow3 = [];
+  // arr.forEach(element =>{
+  //   newArrToPow3.push(Math.pow(element,3));
+  // });
+  // return newArrToPow3;
+  let newArr = [];
+  arr.forEach(element=>{
+    newArr.push(Math.pow(element,3));
   });
-  return newArrToPow3;
+  return newArr;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -25,15 +30,20 @@ Write a function named addOne that, given an array of numbers, uses map to retur
 
 const addOne = (arr) => {
   // Solution code here...
-  const newArr = arr.map((element)=>{
-    return element+1;
-  });
-  return newArr;
+  // const newArr = arr.map((element)=>{
+  //   return element+1;
+  // });
+  // return newArr;
   // let newArrNumbers = [];
   // arr.forEach(element=>{
   //   newArrNumbers.push(element+1);
   // });
   // return newArrNumbers;
+  let newArr = [];
+  arr.map(element=>{
+    newArr.push(element+1);
+  });
+  return newArr;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -44,15 +54,20 @@ Write a function named addQuestion that, given an array of strings, uses map to 
 
 const addQuestion = (arr) => {
   // Solution code here...
-  const stringArr = arr.map(element=>{
-    return element+'?';
-  });
-  return stringArr;
+  // const stringArr = arr.map(element=>{
+  //   return element+'?';
+  // });
+  // return stringArr;
   // let newArrNum = [];
   // arr.forEach(element=>{
   //   newArrNum.push(element+'?');
   // });
   // return newArrNum;
+  let newArr = [];
+  arr.map(element =>{
+    newArr.push(element+'?');
+  });
+  return newArr;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -67,11 +82,16 @@ For example, twoToThe([1,2,3]) returns [2,4,8] because 2 ^ 1 = 2, 2 ^ 2 = 4, and
 
 const forLoopTwoToThe = (arr) => {
   // Solution code here...
-  let arrFortwo = [];
-  for (let i = 0; i<arr.length;i++){
-    arrFortwo.push(Math.pow(2,arr[i]));
-  }
-  return arrFortwo;
+  // let arrFortwo = [];
+  // for (let i = 0; i<arr.length;i++){
+  //   arrFortwo.push(Math.pow(2,arr[i]));
+  // }
+  // return arrFortwo;
+  let newArr = [];
+  arr.map(element=>{
+    newArr.push(Math.pow(2,element));
+  });
+  return newArr;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -82,11 +102,16 @@ Write a function named forEachTwoToThe that produces the same output as your for
 
 const forEachTwoToThe = (arr) => {
   // Solution code here...
-  let arrForEachtwo = [];
+  // let arrForEachtwo = [];
+  // arr.forEach(element=>{
+  //   arrForEachtwo.push(Math.pow(2,element));
+  // });
+  // return arrForEachtwo;
+  let newArr = [];
   arr.forEach(element=>{
-    arrForEachtwo.push(Math.pow(2,element));
+    newArr.push(Math.pow(2,element));
   });
-  return arrForEachtwo;
+  return newArr;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -97,10 +122,15 @@ Write a function named mapTwoToThe that produces the same output as your forLoop
 
 const mapTwoToThe = (arr) => {
   // Solution code here...
-  const arrMapTwo = arr.map(element=>{
-    return Math.pow(2,element);
+  // const arrMapTwo = arr.map(element=>{
+  //   return Math.pow(2,element);
+  // });
+  // return arrMapTwo;
+  let newArr = [];
+  arr.map(element=>{
+    newArr.push(Math.pow(2,element));
   });
-  return arrMapTwo;
+  return newArr;
 };
 
 /* ------------------------------------------------------------------------------------------------
