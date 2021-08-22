@@ -10,10 +10,15 @@ Write a function called addTwo that takes in an array and adds two to every valu
 
 const addTwo = (arr) => {
   // Solution code here...
-  let newArr = [];
-  for(let i = 0; i<arr.length; i++){
-    newArr.push(arr[i]+2);
+  // let newArr = [];
+  // for(let i = 0; i<arr.length; i++){
+  //   newArr.push(arr[i]+2);
 
+  // }
+  // return newArr;
+  let newArr = [];
+  for(let i=0;i<arr.length;i++){
+    newArr.push(arr[i]+2);
   }
   return newArr;
 };
@@ -28,10 +33,17 @@ For example, typeNum([1, 'bob' ,3]) returns [1,3].
 
 const typeNum = (arr) => {
   // Solution code here...
-  const number = arr.filter((element) =>{
-    return (typeof(element) === 'number');
+  // const number = arr.filter((element) =>{
+  //   return (typeof(element) === 'number');
+  // });
+  // return number;
+  let newArr = [];
+  newArr = arr.filter(element=>{
+    let number = (typeof(element)==='number');
+    return number;
   });
-  return number;
+  return newArr;
+
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -44,10 +56,14 @@ For example, containsAnd(['panda', 'ran', 'and']) returns ['panda', 'and'].
 
 const containsAnd = (arr) => {
   // Solution code here...
-  const containAnd = arr.filter((element) =>{
-    return (element.includes('and'));
+  // const containAnd = arr.filter((element) =>{
+  //   return (element.includes('and'));
+  // });
+  // return containAnd;
+  const contained = arr.filter(element=>{
+    return(element.include('and'));
   });
-  return containAnd;
+  return contained;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -60,10 +76,15 @@ For example, oddValues([1,2,3]) returns [1,3].
 
 const oddValues = (arr) => {
   // Solution code here...
-  const oddElement = arr.filter((element) =>{
-    return (element % 2 !==0);
+  // const oddElement = arr.filter((element) =>{
+  //   return (element % 2 !==0);
+  // });
+  // return oddElement;
+
+  const oddNumber = arr.filter(element=>{
+    return (element% 2!==0);
   });
-  return oddElement;
+  return oddNumber;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -76,11 +97,16 @@ For example, notInFirstArray([1,2,3], [1,2,3,4]) returns [4].
 
 const notInFirstArray = (forbiddenValues, arr) => {
   // Solution code here...
-  let newArrNotInFirstArray = arr.filter(element =>{
+  // let newArrNotInFirstArray = arr.filter(element =>{
 
-    return (forbiddenValues.indexOf(element) === -1);
+  //   return (forbiddenValues.indexOf(element) === -1);
+  // });
+  // return newArrNotInFirstArray;
+
+  const contain = arr.filter(element=>{
+    return (forbiddenValues.indexOf(element)=== -1);
   });
-  return newArrNotInFirstArray;
+  return contain;
 };
 
 /* ------------------------------------------------------------------------------------------------
